@@ -1,3 +1,14 @@
+@font-face {
+    font-family:airstream ;
+    src: url(fonts/Airstream-webfont.eot);
+    src: url(fonts/Airstream-webfont.woff);
+}
+@font-face {
+    font-family: lakeshor;
+    src: url(fonts/LAKESHOR-webfont.eot);
+    src: url(fonts/LAKESHOR-webfont.woff);
+}
+
 html{
     height: 100%;
 
@@ -13,8 +24,10 @@ body{
     display: block;
     text-align: center;
     background-color: purple;
-    font-size: 0.8em;
+    font-size: 1em;
     text-transform: uppercase;
+    color: white;
+    font-family: airstream;
     
 
 }
@@ -28,16 +41,20 @@ body{
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
+    
 
 }    
 .details-image{
     width: 60vw;
-    height: 50vw;
+    height: 40vw;
+    border-radius: 25%;
 }
 .details-title{
     display: block;
     background-color: purple;
     margin-top: 1px;
+    color: white;
+    font-family: airstream;
 
 }
 .thumbnails-list{
@@ -53,38 +70,84 @@ body{
     display: block;
     border: solid 2px blueviolet;
     margin-top: 2vh;
-    width: 22vw;
-    height: max-content;
-    border-radius: 20px;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 20%;
     overflow: hidden;
-    
-
-
-    
-
 }
 .thumbnails-anchor{
   display: block;
   overflow-wrap: break-word;
-  
-   
+  text-decoration: none;
+  color: white;
+  font-family: airstream;
 
 }
 .thumbnails-image{
     display: block;
-    width: 22vw;
-    height: max-content;
+    width: 25vw;
+    height: 16vw;
     padding: 0px;
     margin: 0%;
-    
-
- 
-    
 }
 .thumbnails-title{
+    height: 15vw;
     display: block;
     text-align: center;
-    background-color: white;
+    background-color: purple;
+    
    
     
+}
+@media (min-width:560px){
+    .main-class{
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .thumbnails-list{
+        order: -1;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        max-height: 80vh;
+        justify-content: flex-start;
+        
+
+    }
+    .thumbnails-item{
+    min-height: 10vw;
+}
+.thumbnails-title{
+   min-height: 100vw;
+}
+.logo{
+    height: 15%;
+    text-align: center;
+}
+.details-container{
+    margin-left: 15vw;
+}
+.details-image{
+    width: 45vw;
+    height: 30vw;
+    border-radius: 25%;
+}
+.thumbnails-image{
+    display: block;
+    width: 15vw;
+    height: 10vw;
+    padding: 0px;
+    margin: 0%;
+}
+.thumbnails-item{
+    display: block;
+    border: solid 2px blueviolet;
+    width: 15vw;
+    min-height: 15vw;
+    border-radius: 25%;
+    overflow: hidden;
+}
+.details-title{
+width: 25vw;
+text-align: center;
+}
 }
