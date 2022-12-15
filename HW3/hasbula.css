@@ -54,6 +54,11 @@ h2{
     flex-grow: 1;
 
 }
+.main-class.hidden{
+    --thumbnails-image-width: 30vw;
+    --thumbnails-image-height: 20vw;
+    --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.2);
+}
 
 .details-container {
     display: flex;
@@ -82,7 +87,23 @@ h2{
     font-family: airstream;
     bottom: 5vh;
     left: -2vw;
+}
+.hidden .details-container{
+    display: none;
+}
+#hide-button{
+    background-color: black;
+    color: blueviolet;
+    border: solid 2px blueviolet;
+    position: absolute;
+    font-family: airstream;
+    right: -2vh;
 
+}
+.hidden .thumbnails-list{
+    height: 1000px;
+    flex-direction: row;
+   flex-wrap: wrap;
 
 }
 
@@ -92,7 +113,6 @@ h2{
     max-height: 35vh;
     overflow-y: scroll;
     list-style: none;
-    justify-content: space-around;
     padding-left: 0;
     margin-top: 3vh;
     
@@ -105,6 +125,7 @@ h2{
     margin-top: 2vh;
     width: var(--thumbnails-image-width);
     min-height: calc(var(--thumbnails-image-height) + var(--thumbnails-title-height));
+    max-height: calc(var(--thumbnails-image-height) + var(--thumbnails-title-height));
     border-radius: 25%;
     overflow: hidden;
     margin-left: 1vw;
@@ -118,9 +139,12 @@ h2{
     overflow-wrap: break-word;
     text-decoration: none;
     color: white;
-    font-size: xx-small;
+   font-size: x-small;
     font-family: airstream;
 
+}
+.hidden .thumbnails-anchor{
+    font-size: xx-small;
 }
 
 .thumbnails-image {
@@ -143,7 +167,7 @@ h2{
     body {
         --thumbnails-image-width: 12vw;
         --thumbnails-image-height: 8vw;
-        --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.25);
+        --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.3);
         --details-image-width: 45vw;
         --details-image-height: 35vw;
     }
@@ -161,11 +185,9 @@ h2{
         max-height: 80vh;
         justify-content: flex-start;
     }
-    .logo {
-        height: 15%;
-        text-align: center;
+    .hidden .thumbnails-anchor{
+        font-size: medium;
     }
-
     .details-container {
         justify-content: center;
     }
@@ -175,6 +197,9 @@ h2{
     text-align: center;
 }
 @media (min-width: 1000px) {
+    .logo{
+        height: 75px;
+    }
     .details-container {
         margin-top: 5vh;
         margin-right: 5vw;
