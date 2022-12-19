@@ -42,7 +42,8 @@ body {
     color: white;
     font-family: airstream;
 }
-h2{
+
+h2 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -54,10 +55,16 @@ h2{
     flex-grow: 1;
 
 }
-.main-class.hidden{
+
+.main-class.hidden {
     --thumbnails-image-width: 30vw;
     --thumbnails-image-height: 20vw;
     --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.2);
+}
+
+.is-point {
+    transform: scale(0.001);
+    transition: 0s;
 }
 
 .details-container {
@@ -65,10 +72,12 @@ h2{
     flex-direction: column;
     align-items: center;
     margin-bottom: 2vh;
+    transition: 5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
 
 }
-.details-frame{
+
+.details-frame {
     position: relative;
 }
 
@@ -88,10 +97,12 @@ h2{
     bottom: 5vh;
     left: -2vw;
 }
-.hidden .details-container{
+
+.hidden .details-container {
     display: none;
 }
-#hide-button{
+
+#hide-button {
     background-color: black;
     color: blueviolet;
     border: solid 2px blueviolet;
@@ -100,10 +111,11 @@ h2{
     right: -2vh;
 
 }
-.hidden .thumbnails-list{
+
+.hidden .thumbnails-list {
     height: 1000px;
     flex-direction: row;
-   flex-wrap: wrap;
+    flex-wrap: wrap;
 
 }
 
@@ -115,8 +127,8 @@ h2{
     list-style: none;
     padding-left: 0;
     margin-top: 3vh;
-    
-   
+
+
 
 }
 
@@ -130,7 +142,8 @@ h2{
     overflow: hidden;
     margin-left: 1vw;
 }
-.thumbnails-item:hover{
+
+.thumbnails-item:hover {
     transform: scale(1.1);
 }
 
@@ -139,11 +152,12 @@ h2{
     overflow-wrap: break-word;
     text-decoration: none;
     color: white;
-   font-size: x-small;
+    font-size: x-small;
     font-family: airstream;
 
 }
-.hidden .thumbnails-anchor{
+
+.hidden .thumbnails-anchor {
     font-size: xx-small;
 }
 
@@ -178,35 +192,40 @@ h2{
     }
 
     .thumbnails-list {
-        padding-right: 2vw ;
+        padding-right: 2vw;
         order: -1;
         flex-direction: column;
         flex-wrap: nowrap;
         max-height: 80vh;
         justify-content: flex-start;
     }
-    .hidden .thumbnails-anchor{
+
+    .hidden .thumbnails-anchor {
         font-size: medium;
     }
+
     .details-container {
         justify-content: center;
     }
 }
+
 .details-title {
     width: 25vw;
     text-align: center;
 }
+
 @media (min-width: 1000px) {
-    .logo{
+    .logo {
         height: 75px;
     }
+
     .details-container {
         margin-top: 5vh;
         margin-right: 5vw;
     }
-    
+
     .thumbnails-list {
-        
+
         margin-top: 2.5vh;
         max-height: 86vh;
     }
@@ -214,6 +233,6 @@ h2{
     .thumbnails-title {
         font-size: 1.5em;
     }
-   
+
 
 }
