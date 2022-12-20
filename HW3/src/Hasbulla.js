@@ -11,6 +11,7 @@ function setDetails(anchor) {
     const dataAudio=anchor.getAttribute("data-details-audio")
     detailsAudio.src=dataAudio;
     showDetails();
+    play();
 
 }
 for (let i = 0; i < anchorElements.length; i++) {
@@ -35,10 +36,9 @@ function showDetails() {
 function play(){
     let audio=document.getElementById("audio");
     audio.play();
+    setTimeout(function(){
+        audio.pause();
+    },3000)
 
 }
-for (let i = 0; i < anchorElements.length; i++) {
-    anchorElements[i].addEventListener("click", function() {
-        play(anchorElements[i]);
-    })
-}
+

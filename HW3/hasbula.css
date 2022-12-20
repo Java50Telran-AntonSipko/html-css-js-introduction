@@ -64,7 +64,7 @@ h2 {
 
 .is-point {
     transform: scale(0.001);
-    transition: 0s;
+    transition:0s;
 }
 
 .details-container {
