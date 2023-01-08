@@ -29,8 +29,9 @@ let str2="apple";
 const arrr=[10,11];
 function getNumbersWithDigitsAmount(digitsAmount,array){
    const ar=array.filter(function(number){
-       if(countDigits(number)==digitsAmount){
-        return number;
+    let nDigits=countDigits(number);
+       if(nDigits==digitsAmount){
+        return nDigits;
        }
     
    })
