@@ -82,19 +82,18 @@ console.log(`TASK 2.1:getMinTest`);
 console.log(`Unsorted array is ${ar3}`);
 console.log(`getMax Test,expected:20 ${getAvg(ar3)}`);
 console.log('***************************************************************************************************************');
-
+const ar4=[1,2,3];
 function getMinMaxAvg(array){
-    const res=[];
+    let res=[];
     res=array.reduce(function(res,cur){
-        getMin(array);
-        getMax(array);
-        getAvg(array);
-    });
+        return res;
+       
+    },getMin(array));
     return res;
 }
 console.log(`TASK 2.1:getMinTest`);
 console.log(`Unsorted array is ${ar3}`);
-console.log(`getMax Test,expected:20 ${getMinMaxAvg(ar3)}`);
+console.log(`getMax Test,expected:20 ${getMinMaxAvg(ar4)}`);
 console.log('***************************************************************************************************************');
 
 
