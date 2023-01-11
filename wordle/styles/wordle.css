@@ -1,0 +1,54 @@
+.logo{
+    font-size: 5em;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+}
+.guess-letters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+    flex-direction: row;
+}
+.game-status{
+    margin-top: 3vh;
+    display: block;
+    
+}
+.play-again{
+    width: 3vh;
+}
+.letter{
+    margin-right: 10px;
+    width: 5vw;
+    height: 5vw;
+    background-color: ghostwhite;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 2em;
+}
+
+.trials-remained{
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.game-result{
+    display: flex;
+    justify-content: center;
+    font-size:2em;
+}
+.play-again{
+    justify-content: center;
+    width: 800px;
+    font:bold black;
+    margin-left: 10vh;
+}
+.guess-input{
+    margin-left: 35vw;
+   width: 800px;
+   text-align: center;
+   font-size: 35px;
+}
