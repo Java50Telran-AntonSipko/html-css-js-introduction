@@ -1,3 +1,4 @@
+
 .logo{
     font-size: 5em;
     margin-top: 10vh;
@@ -41,14 +42,19 @@
     font-size:2em;
 }
 .play-again{
-    justify-content: center;
     width: 800px;
     font:bold black;
-    margin-left: 10vh;
+}
+input{
+    display: block;
+    margin: auto;
+}
+button{
+    display: block;
+    margin: auto;
 }
 .guess-input{
-    margin-left: 35vw;
-   width: 800px;
+   width: 1000px;
    text-align: center;
-   font-size: 35px;
-}
+   font-size: 35px; */
+} 
