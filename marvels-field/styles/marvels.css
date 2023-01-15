@@ -3,6 +3,9 @@
 
 }
 .letter{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
     margin-left: 1vw;
     background-color: black;
     color: black;
