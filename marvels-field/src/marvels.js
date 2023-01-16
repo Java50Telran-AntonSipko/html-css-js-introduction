@@ -9,7 +9,7 @@ const playAgain = document.getElementById("play-again");
 let allLetterElement;
 
 //variables required for JS logic
-const questionsWords = [["question1", "aaswer1"], ["question2", "answer2"]]
+const questionsWords = [["Capital city of Israel", "jerusalem"], ["Highest mountain in the world ", "everest"],["Capital city of USA ", "washington"],["Founder of Tesla company ", "elon mask"]]
 let currentIndex = 0;
 let initialLetttersNumber;
 let remainedLettersNumber;
@@ -26,16 +26,21 @@ function startGame() {
     letterInputElement.value="";
     wordInputElement.value = "";
     wordInputElement.readOnly = true;
-    playAgain.style.display = 'none';
+   playAgain.style.display = 'none';
     resultMessage.innerHTML = "";
     wordElement.innerHTML = getWordDivs();
     allLetterElement=document.querySelectorAll(".letter");
     remainedLettersElement.innerHTML=`Remained letters ${trials}`;
+    reversechangingInputs();
+    
+
 }
 function getWord() {
     res = questionsWords[currentIndex][1];
 if(currentIndex<questionsWords.length-1){
     currentIndex++;
+}else{
+    currentIndex=0;
 }
 return res;
 }
@@ -48,30 +53,48 @@ function getWordDivs() {
 
     })
     return ar.join("");
-    
-    
-
-    //TODO - map,join or reduce
-
 }
 
 function checkWord() {
-    //TODO
+   if(wordInputElement.value==word){
+    resultMessage.innerHTML ="Congratulation you are Winner!!!"
+   }else{
+    resultMessage.innerHTML ="YOU LOST THIS GAME,Press:play again button"
+   }
+   playAgain.style.display="block";
 
 }
 function processLetter() {
     // wordInputElement.readOnly = false
-        if(flGameover){
-        alert("The game is over, press play-again to play")
-    }else{
         const trialLetter=letterInputElement.value;
         trials--;
         remainedLettersElement.innerHTML=`Remained letters ${trials}`;
         if(word.includes(trialLetter)){
             backgroungChange(allLetterElement,trialLetter)
         }
+        if(!trials){
+            changingInputs();
+            
+        }
+        if(wordInputElement.value!=""){
+            finishGame();
+        }
+
+    
+}
+function changingInputs(){
+    if(trials!=0){
+        trials=0;
+        remainedLettersElement.innerHTML=`Remained letters ${trials}`;
 
     }
+    wordInputElement.readOnly=false;
+            letterInputElement.value="";
+            letterInputElement.readOnly=true;
+}
+function reversechangingInputs(){
+    wordInputElement.readOnly=true;
+            letterInputElement.readOnly=false;
 }
 function backgroungChange(allElements,trialLetter){
     for(let i=0;i<allElements.length;i++){
@@ -81,10 +104,13 @@ function backgroungChange(allElements,trialLetter){
     }
 }
 function takeChance() {
-    //TODO
-
+    changingInputs();
 }
 function finishGame() {
+    checkWord();
+    flGameover=true;
+    
+
     //TODO
 
 }
