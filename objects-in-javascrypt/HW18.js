@@ -150,29 +150,50 @@ function getMostPupulatedCountries(employees, counter) {
 }
 function isAnagram(word, anagram) {
     wordArray=Array.from(word);
-    const lettersFromWord=lettersOccur(word);
-    
-
-
-    //TODO 
-    //returns true if a given anagram is indeed an angram of a given word
-    //anagram must have  same length as word
-    //anagram must have all letters from word
-    //hello anagram examples: elolh, olleh, ohell, lehol
-    //exampls non-anagrams: eloll (no h), ollehh(different length),
-    // olaeh ("a" doesn't exist in word), oleh(different length)
+    anagramArray=Array.from(anagram);
+    const lettersFromWord=lettersOccur(wordArray);
+    const lettersFromWordArray=Object.entries(lettersFromWord);
+    const lettersFromAnagram=lettersOccur(anagramArray);
+    let res=true;
+    lettersFromWordArray.forEach((letter,index)=>{
+        let letterFromArray=letter[0];
+        let numOfLetters=letter[1];
+        if(numOfLetters!=lettersFromAnagram[letterFromArray]){
+            res=false;
+        }
+        return res;
+        
+    })
+    return res;
 }
 function lettersOccur(wordarray){
     const res={};
-    if(!res[wordarray]){
-        res[wordarray]=1;
-    }else{
-        res[wordarray]++;
-    }
+    let letter;
+    wordarray.forEach((letter,index)=>{
+        letter=wordarray[index];
+        if(!res[letter]){
+            res[letter]=1;
+        }else{
+            res[letter]++;
+        }
+        return res;
+
+    })
     return res;
+    
 }
 const occur=getOccurrences(employees);
+console.log('Task 1:Name of most populated country from employees:')
 const popolatCountry=getMostPopulatedCountry(employees);
+console.log(`Most employees from country: ${popolatCountry} -Should be "Israel"`)
+console.log('******************************************************************')
+console.log('Task 2:Name of most populated countries from emloyees:')
 const mostPopulatedCountries=getMostPupulatedCountries(employees, 3)
+console.log(`3 Most populated countries ${mostPopulatedCountries} -Should be "Israel,UK,USA"`)
+console.log('******************************************************************')
+console.log('Task 3:Anagram checking :')
+const task3=isAnagram('hello', 'elloh');
+console.log(`checking "elloh" for word "hello" ${task3}- should be true `)
+
 
 
