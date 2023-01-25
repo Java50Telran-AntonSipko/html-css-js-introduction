@@ -1,0 +1,241 @@
+@font-face {
+    font-family: airstream;
+    src: url(fonts/Airstream-webfont.eot);
+    src: url(fonts/Airstream-webfont.woff);
+}
+
+@font-face {
+    font-family: lakeshor;
+    src: url(fonts/LAKESHOR-webfont.eot);
+    src: url(fonts/LAKESHOR-webfont.woff);
+}
+
+html {
+    height: 100%;
+
+}
+
+body {
+    --thumbnails-image-width: 40vw;
+    --thumbnails-image-height:30vw;
+    --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.1);
+    --details-image-width: 10vw;
+    --details-image-height: 10vw;
+    --thumbnails-item-size: calc(var(--details-image-height) + var(--thumbnails-title-height));
+
+}
+
+body {
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.logo {
+    display: block;
+    text-align: center;
+    background-color: purple;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+    font-family: airstream;
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.main-class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+
+}
+
+.main-class.hidden {
+    --thumbnails-image-width: 20vw;
+    --thumbnails-image-height: 15vw;
+    --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.1);
+}
+
+.is-point {
+    transform: scale(0.001);
+    transition:0ms;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2vh;
+    transition: 5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+
+}
+
+.details-frame {
+    position: relative;
+}
+
+.details-image {
+    width: var(--details-image-width);
+    height: var(--details-image-height);
+    border-radius: 25%;
+}
+
+.details-title {
+    display: block;
+    background-color: purple;
+    margin-top: 1px;
+    color: white;
+    position: absolute;
+    font-family: airstream;
+    bottom: 5vh;
+    left: -2vw;
+}
+
+.hidden .details-container {
+    display: none;
+}
+
+#hide-button {
+    background-color: black;
+    color: blueviolet;
+    border: solid 2px blueviolet;
+    position: absolute;
+    font-family: airstream;
+    right: -2vh;
+
+}
+
+.hidden .thumbnails-list {
+    height: 1000px;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.thumbnails-list {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 35vh;
+    overflow-y: scroll;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 3vh;
+
+
+
+}
+
+.thumbnails-item {
+    border: solid 2px blueviolet;
+    margin-top: 2vh;
+    width: var(--thumbnails-image-width);
+    min-height: calc(var(--thumbnails-image-height) + var(--thumbnails-title-height));
+    max-height: calc(var(--thumbnails-image-height) + var(--thumbnails-title-height));
+    border-radius: 25%;
+    overflow: hidden;
+    margin-left: 1vw;
+}
+
+.thumbnails-item:hover {
+    transform: scale(1.1);
+}
+
+.thumbnails-anchor {
+    display: block;
+    overflow-wrap: break-word;
+    text-decoration: none;
+    color: white;
+    font-size: x-small;
+    font-family: airstream;
+
+}
+
+.hidden .thumbnails-anchor {
+    font-size: 2em;
+}
+
+.thumbnails-image {
+    display: block;
+    width: var(--thumbnails-image-width);
+    height: var(--thumbnails-image-height);
+}
+
+.thumbnails-title {
+    height: var(--thumbnails-title-height);
+    display: block;
+    text-align: center;
+    background-color: purple;
+
+
+
+}
+
+@media (min-width:560px) {
+    body {
+        --thumbnails-image-width: 12vw;
+        --thumbnails-image-height: 8vw;
+        --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.15);
+        --details-image-width: 40vw;
+        --details-image-height: 30vw;
+    }
+
+    .main-class {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .thumbnails-list {
+        padding-right: 2vw;
+        order: -1;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        max-height: 80vh;
+        justify-content: flex-start;
+    }
+
+    .hidden .thumbnails-anchor {
+        font-size: medium;
+    }
+
+    .details-container {
+        justify-content: center;
+    }
+}
+
+.details-title {
+    width: 20vw;
+    text-align: center;
+}
+
+@media (min-width: 1000px) {
+    .logo {
+        height: 75px;
+    }
+
+    .details-container {
+        margin-top: 5vh;
+        margin-right: 5vw;
+    }
+
+    .thumbnails-list {
+
+        margin-top: 2.5vh;
+        max-height: 86vh;
+    }
+
+    .thumbnails-title {
+        font-size: 1.5em;
+    }
+    .details-title{
+        font-size: 1.5em;
+    }
+
+
+}
