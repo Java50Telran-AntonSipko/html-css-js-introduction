@@ -25,17 +25,11 @@ for (let i = 0; i < anchorElements.length; i++) {
 function getAnchors(){
     return `${getListItems()}`
 }
-function cutOverview(){
-    itemsArray=data
-
-    
-
-}
 function getListItems(){
     const itemsArray=data.results.map(movie=>
         `<li class="thumbnails-item">
         <a class="thumbnails-anchor" href="#" data-details-image="${httpPrefix}${movie.poster_path}"
-        data-details-title="${movie.overview}">
+        data-details-title="${wordpress(movie.overview)}">
             <img src="${httpPrefix}${movie.backdrop_path}"  class="thumbnails-image">
             <span class="thumbnails-title">"${movie.original_title}"</span>
 
@@ -68,4 +62,36 @@ function play(){
     },3000)
 
 }
+
+// function cuttingLine(str){
+//     lastIndex=str.indexOf(" ",50)
+//     let line=str.slice(0,lastIndex)+"..."
+//     return line;
+    
+// }
+function wordpress(str){
+    let lastSymbol;
+    let lastIndex;
+    const symbols=[" ",".",","]
+    firstSymbol=symbols.sort((e1,e2)=>{
+        if(str.indexOf(e2,50)>0 &&str.indexOf(e1,50)>str.indexOf(e2,50)){
+            return 1
+        }else{
+            return -10;
+        }
+         
+
+    })
+    lastIndex=str.indexOf(firstSymbol[0],50);
+    return str.slice(0,lastIndex)+"..."
+}
+let words=data.results[3].overview
+word=wordpress(words);
+console.log(word);
+
+
+
+
+
+
 
