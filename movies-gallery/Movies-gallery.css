@@ -178,6 +178,9 @@ h2 {
 }
 
 @media (min-width:560px) {
+    .derails-title{
+        display: none;
+    }
     body {
         --thumbnails-image-width: 12vw;
         --thumbnails-image-height: 8vw;
