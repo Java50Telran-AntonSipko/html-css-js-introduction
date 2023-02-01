@@ -1,7 +1,12 @@
  
 /* HW #21 */
+
+import { employeeConfig } from "../config/employee-config";
+import { getRandomNumber } from "../utils/random";
+
 // Employe structure and function createEmployee() taken from previous HW
 export function createEmployee(id, name, birthYear, salary, city, country) {
+    // const ranId=getRandomNumber(employeeConfig.minId,employeeConfig.maxId);
     return {id, name, birthYear, salary, address: {city, country}}
 }
 export class Company {
@@ -18,7 +23,9 @@ export class Company {
             this.#employees[empl.id] = empl;
             res = true;
         }
-        return res;
+        // if(res===false){
+        //     window.alert(`The employee already exists`);
+        // }
     }
     removeEmployee(id) {
         //removes employee with a given id from #employees object
@@ -29,6 +36,9 @@ export class Company {
             res = true;
             delete this.#employees[id]
         }
+        // if(res===false){
+        //     window.alert(`No employees with ${id} have found`);
+        // }
     }
     getEmployeesCountry(country) {
         //returns array of employee objects having field "country" equaled to a given country
