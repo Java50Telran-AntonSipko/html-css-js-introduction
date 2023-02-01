@@ -1,12 +1,12 @@
  
 /* HW #21 */
 
-import { employeeConfig } from "../config/employee-config";
-import { getRandomNumber } from "../utils/random";
+ import { employeeConfig } from "../config/employee-config.js";
+ import { getRandomNumber } from "../utils/random.js";
 
 // Employe structure and function createEmployee() taken from previous HW
-export function createEmployee(id, name, birthYear, salary, city, country) {
-    // const ranId=getRandomNumber(employeeConfig.minId,employeeConfig.maxId);
+export function createEmployee( name, birthYear, salary, city, country) {
+     const id=getRandomNumber(employeeConfig.minId,employeeConfig.maxId);
     return {id, name, birthYear, salary, address: {city, country}}
 }
 export class Company {
@@ -18,27 +18,27 @@ export class Company {
         //adds empl into #employees object
         //returns true if added new employee object
         //returns false if employee with a given id value already exists
-        let res = false;
+        let message='';
         if (!this.#employees[empl.id]) {
             this.#employees[empl.id] = empl;
-            res = true;
+            
+        }else{
+            message=`The employee with this id ${empl.id} already exists`
         }
-        // if(res===false){
-        //     window.alert(`The employee already exists`);
-        // }
+        return message;
+       
     }
     removeEmployee(id) {
         //removes employee with a given id from #employees object
         //returns true if removed
         //returns false if employee with the id doesn't exist
-        let res = false;
+        let message;
         if (this.#employees[id]) {
-            res = true;
             delete this.#employees[id]
+        }else{
+            message=`The employee with this id ${id} doesnt exists`
         }
-        // if(res===false){
-        //     window.alert(`No employees with ${id} have found`);
-        // }
+        
     }
     getEmployeesCountry(country) {
         //returns array of employee objects having field "country" equaled to a given country
