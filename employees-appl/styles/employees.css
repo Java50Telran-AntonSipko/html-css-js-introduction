@@ -1,0 +1,178 @@
+#buttons-section{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+#add-employee{
+    margin-right: 2vw;
+    width: 10vw;
+    height: 10vw;
+
+}
+#show-employees{
+    width: 10vw;
+    height: 10vw;
+
+}
+.form-input{
+    height: 3vw;
+    text-align: center;
+}
+.form-select-group{
+    margin-top: 2vw;
+    font-size: 1.5vw;
+
+}
+.form-buttons{
+    margin-top: 2vw;
+
+}
+#submit-button{
+    width: 8vw;
+    height: 3vw;
+
+}
+#reset-button{
+    width: 8vw;
+    height: 3vw;
+
+}
+#cities{
+    width: 5vw;
+    height: 2vw;
+    font-size: 1vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+#countries{
+    width: 5vw;
+    height: 2vw;
+    font-size: 1vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+
+}
+label{
+    display: block;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+}
+.table-logo{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+table{
+   display: block;
+    height: 100%;
+    position: absolute;
+    margin-top: 1vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+th,td{
+    width: 5vw;
+    border: 1px solid black;
+    font-size: 1.5vw;
+   
+}
+@media (min-width:560px) {
+    #buttons-section{
+       display: flex;
+       justify-content: center;
+        
+    }
+    #add-employee{
+        margin-right: 2vw;
+        width: fit-content;
+        height: 10vw;
+    
+    }
+    #show-employees{
+        width: fit-content;
+        height: 10vw;
+    
+    }
+    .form-input{
+        height: 3vw;
+        text-align: center;
+    }
+    .form-select-group{
+        margin-top: 2vw;
+        font-size: 1.5vw;
+
+    
+    }
+    .form-buttons{
+        margin-top: 2vw;
+    
+    }
+    #submit-button{
+        width: 10vw;
+        height: 3vw;
+        text-align: center;
+    
+    }
+    #reset-button{
+        width: 10vw;
+        height: 3vw;
+        text-align: center;
+    
+    }
+    #cities{
+        width: 10vw;
+        height: 5vw;
+        font-size: 2vw;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    }
+    #countries{
+        width: 10vw;
+        height: 5vw;
+        font-size: 2vw;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    
+    
+    }
+    label{
+        display: block;
+        font-size: 3vw;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    
+    }
+    .table-logo{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    #table-section{
+        display: block;
+        position: absolute;
+        margin-top: 10vw;
+        width: 100vw;
+    }
+    table{
+    display: block;
+    position: relative;
+        margin-top: 1vw;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+   .table-logo{
+    width: 2vw;
+    display: block;
+   }
+    th,td{
+        width: 15vw;
+        border: 1px solid black;
+        font-size: 3vw;
+       
+    }
+}
+
+
+ 
+
+
+    
+
