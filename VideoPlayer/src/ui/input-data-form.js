@@ -2,7 +2,7 @@ import { videoConfig } from "../config/video_config.js";
 
 export class DataForm {
     #videosElement
-    #inputElement
+    #inputElements
     #formElement
 
     constructor(parenId) {
@@ -15,13 +15,13 @@ export class DataForm {
         <input required name="playingtime" type="number" placeholder="Enter the playing time in sec" class="form-input">
         <div class="form-selector">
         <label>Select Video</label>
-        <select name="video" id="video" class="form-select">
+        <select name="videoRef" id="video" class="form-select">
         <option value="aaa"></option>
         </select>
         </div>
         </form> `
         this.#formElement=document.getElementById("playingtime-form")
-        this.#inputElement = document.querySelector("#playingtime-form[name]")
+        this.#inputElements = document.querySelectorAll("#playingtime-form[name]")
         this.#videosElement = document.getElementById("video");
         this.setVideos();
 
@@ -39,8 +39,12 @@ export class DataForm {
     addHandler(handlerFun) {
         this.#formElement.addEventListener("submit", async (event) =>{
             event.preventDefault();
-            const playingTimeData={playingtime:this.#inputElement.value}
-            await handlerFun(playingTimeData)
+            const videoData=Array.from(this.#inputElements).reduce((res,element)=>{
+                res[element.name]=element.value;
+                return res;
+             },{})
+            await handlerFun(videoData)
+             
 
         })
 

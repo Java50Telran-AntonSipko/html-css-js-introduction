@@ -1,8 +1,8 @@
-import { videoConfig } from "../config/video_config";
+import { videoConfig } from "../config/video_config.js";
 
-export function checkPlayingTime(playingTime) {
+export function checkPlayingTime(time) {
     let resStr = '';
-    if (playingTime.playingtime < videoConfig.minTime * 100 || playingTime.playingtime > videoConfig.maxTime * 100) {
+    if (time < videoConfig.minTime * 1000 || time > videoConfig.maxTime * 1000) {
         resStr = `Playing time must be in the range [${videoConfig.minTime} - ${videoConfig.maxTime}] `
     }
     return resStr;
