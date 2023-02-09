@@ -6,14 +6,17 @@ const data=new DataForm("video-form-section")
 data.addHandler(handlerFun);
 const player= new VideoPlayer("video-section")
 async function  handlerFun(videoData){
-    if(checkPlayingTime(videoData.playingtime)===" "){
+    if(checkPlayingTime(+videoData.time)===""){
         player.setUrl(videoData.videoRef)
         player.start()
-        await sleep((videoData.playingtime)*1000)
+        await sleep(+(videoData.time)*1000)
         player.stop
         
+    }else{
+        alert(`${checkPlayingTime(+videoData.time)}`)
+
     }
-    alert(`${checkPlayingTime(videoData.playingtime)}`)
+   
 
 
 

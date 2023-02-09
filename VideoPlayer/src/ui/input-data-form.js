@@ -11,8 +11,8 @@ export class DataForm {
             throw `Wrong parent ID ${parenId}`;
         }
         parentFormElement.innerHTML = `
-        <form id="playingtime-form">
-        <input required name="playingtime" type="number" placeholder="Enter the playing time in sec" class="form-input">
+        <form id="video-form">
+        <input  name="time" type="number" placeholder="Enter the playing time in sec" class="form-input">
         <div class="form-selector">
         <label>Select Video</label>
         <select name="videoRef" id="video" class="form-select">
@@ -20,8 +20,8 @@ export class DataForm {
         </select>
         </div>
         </form> `
-        this.#formElement=document.getElementById("playingtime-form")
-        this.#inputElements = document.querySelectorAll("#playingtime-form[name]")
+        this.#formElement=document.getElementById("video-form")
+        this.#inputElements = document.querySelectorAll("#video-form [name]")
         this.#videosElement = document.getElementById("video");
         this.setVideos();
 
@@ -43,6 +43,7 @@ export class DataForm {
                 res[element.name]=element.value;
                 return res;
              },{})
+             
             await handlerFun(videoData)
              
 

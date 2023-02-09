@@ -2,8 +2,8 @@ export class VideoPlayer{
     #videoElement
     constructor(parentId){
        const parentElement=document.getElementById(parentId)
-        parentElement.innerHTML = `<video id="video" src=" "></video>`
-        this.#videoElement=document.querySelector("video")
+        parentElement.innerHTML = `<video id="video-player" src=" "></video>`
+        this.#videoElement=document.querySelector("#video-player")
         
     }
     setUrl(url){
